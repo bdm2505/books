@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Books</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" >
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+{{>header}}
+<div class="main-container">
+  <div class="container note-container m-2">
+    <div class="d-flex h5 p-2">Создание новой записи</div>
+    <div class="line"></div>
+
+    <form action="note-create" class="m-2 d-flex flex-column" method="post">
+
+      {{#error}}<label class="p-3 bg-warning flex-fill justify-content-center d-flex align-items-center">Ошибка! Введены не корректные данные!</label>{{/error}}
+      <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
+      <label class="form-label">
+        Заголовок
+        <input type="text" class="form-control m-1" name="title" placeholder="Введите название статьи...">
+      </label>
+      <label class="form-label mt-3">
+        Текст
+        <textarea class="form-control m-1 " name="text" placeholder="Введите текст..."></textarea>
+      </label>
+      <div class="d-flex m-1 flex-fill">
+        <button type="submit" class="btn btn-success m-1 flex-fill">Сохранить</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/bootstrap.bundle.js"></script>
+</body>
+</html>

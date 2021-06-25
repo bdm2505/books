@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Books</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" >
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+{{>header}}
+<div class="main-container">
+  <div class="container">
+    <form action="registration-data" class="m-2" method="post">
+      {{#error}}<label class="p-3 bg-warning flex-fill justify-content-center d-flex align-items-center">Ошибка! Введены не корректные данные!</label>{{/error}}
+      <input type="text" class="form-control m-1" name="login" placeholder="login">
+      <input type="text" class="form-control m-1" name="pass" placeholder="password">
+      <input type="text" class="form-control m-1" name="name" placeholder="name">
+      <input type="email" class="form-control m-1" name="email" placeholder="email">
+      <div class="d-flex m-1">
+        <button type="submit" class="btn btn-success m-1"> Зарегестрироваться</button>
+        <a href="/login" class="btn btn-info m-1 ms-auto"> Вход </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/bootstrap.bundle.js"></script>
+</body>
+</html>

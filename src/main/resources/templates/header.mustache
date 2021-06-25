@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container align-items-stretch">
+
+    <button class="navbar-toggler ms-2 p-1 mb-1 mt-1 m-lg-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="material-icons align-self-center">menu</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand" href="#"><img src="img/book.png" width="30px" height="30px" alt="icon"></a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link {{#books}}active{{/books}}" href="/">Книги</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{#chats}}active{{/chats}}" href="/chats">Обсуждение</a>
+        </li>
+        <li class="nav-item {{#notes-header}}active{{/notes-header}}">
+          <a class="nav-link " href="/notes">Статьи</a>
+        </li>
+        <li class="nav-item {{#library}}active{{/library}}">
+          <a class="nav-link" href="/library">Моя библиотека</a>
+        </li>
+      </ul>
+
+
+    </div>
+    <div class="ms-auto align-items-stretch d-flex">
+      <form class="d-flex" id="form-search">
+        <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search">
+
+        <button class="btn btn-light d-flex align-items-center m-1 p-1" type="submit" form="form-search">
+          <span class="material-icons ">search</span>
+        </button>
+      </form>
+      {{#auth}}
+        <a class="btn btn-light d-flex align-items-center m-1 p-1" aria-current="page" href="/settings"><span
+            class="material-icons">settings</span></a>
+        <a class="btn btn-light d-flex align-items-center m-1 p-1" aria-current="page" href="#"><span
+            class="material-icons">account_circle</span></a>
+      {{/auth}}
+      {{^auth}}
+        <a class="btn btn-light d-flex align-items-center m-1 p-1" aria-current="page" href="/login">Войти</a>
+      {{/auth}}
+
+    </div>
+  </div>
+</nav>
