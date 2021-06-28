@@ -34,6 +34,11 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
                 .permitAll()
                 .and()
                 .formLogin()
+                .loginPage("/login")
+                .usernameParameter("user")
+                .passwordParameter("pass")
+                .defaultSuccessUrl("/")
+                .permitAll()
             it.csrf()
                 .ignoringAntMatchers("/registration-data")
         }

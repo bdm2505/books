@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.servlet.ModelAndView
 import ru.lytvest.books.entity.UserInfo
 import ru.lytvest.books.entity.UserPass
-import ru.lytvest.books.entity.UserRegistration
+import ru.lytvest.books.quest.UserRegistration
 import ru.lytvest.books.repository.NoteRepository
 import ru.lytvest.books.repository.UserInfoRepository
 import ru.lytvest.books.repository.UserPassRepository
@@ -62,7 +62,6 @@ class BaseController(
     }
 
     @PostMapping("registration-data")
-
     fun registrationData(user: UserRegistration?, model: ModelMap, auth: Authentication?): ModelAndView {
         model["auth"] = auth
         println("registration $user")
@@ -78,6 +77,12 @@ class BaseController(
         userPassRepository.save(userPass)
 
         return ModelAndView("redirect:/login")
+    }
+
+    @GetMapping("login")
+    fun registration(model: ModelMap): ModelAndView {
+
+        return ModelAndView("login", model)
     }
 }
 

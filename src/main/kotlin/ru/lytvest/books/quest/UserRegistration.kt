@@ -1,4 +1,4 @@
-package ru.lytvest.books.entity
+package ru.lytvest.books.quest
 
 data class UserRegistration(
     val login:String = "",

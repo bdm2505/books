@@ -7,7 +7,7 @@
       <span class="material-icons align-self-center">menu</span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <a class="navbar-brand" href="#"><img src="img/book.png" width="30px" height="30px" alt="icon"></a>
+      <a class="navbar-brand" href="#"><img src="/img/book.png" width="30px" height="30px" alt="icon"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link {{#books}}active{{/books}}" href="/">Книги</a>
@@ -33,15 +33,15 @@
           <span class="material-icons ">search</span>
         </button>
       </form>
-      {{#auth}}
+      {{#user}}
         <a class="btn btn-light d-flex align-items-center m-1 p-1" aria-current="page" href="/settings"><span
             class="material-icons">settings</span></a>
         <a class="btn btn-light d-flex align-items-center m-1 p-1" aria-current="page" href="#"><span
             class="material-icons">account_circle</span></a>
-      {{/auth}}
-      {{^auth}}
+      {{/user}}
+      {{^user}}
         <a class="btn btn-light d-flex align-items-center m-1 p-1" aria-current="page" href="/login">Войти</a>
-      {{/auth}}
+      {{/user}}
 
     </div>
   </div>

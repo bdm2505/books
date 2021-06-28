@@ -1,37 +1,27 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-  <link href="/css/bootstrap.min.css" rel="stylesheet" >
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
-  <link href="/css/style.css" rel="stylesheet">
-</head>
-<body>
-<div>
-  <form name="f" action="/perform-login" method="post">
-    <fieldset>
-      <legend>Войдите</legend>
-      {{#param.error}}
-      <div class="alert alert-error">
+{{>all-header}}
+<form class="container note-container pb-2 mt-4" style="max-width: 512px" method="post">
+  <fieldset>
+    <legend class="mt-2">Войдите</legend>
+    {{#param.error}}
+      <div class="p-3 bg-danger">
         Неправильные имя и пароль.
       </div>
-      {{/param.error}}
-      {{#param.logout}}
-      <div  class="alert alert-success">
+    {{/param.error}}
+    {{#param.logout}}
+      <div class="p-3 bg-success">
         You have been logged out.
       </div>
-      {{/param.logout}}
-      <label for="user">Имя</label>
-      <input type="text" id="user" name="user"/>
-      <label for="pass">Пароль</label>
-      <input type="password" id="pass" name="pass"/>
-      <div class="form-actions">
-        <button type="submit" class="btn">Войти</button>
-      </div>
-    </fieldset>
-  </form>
-</div>
-</body>
-</html>
+    {{/param.logout}}
+    <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
+    <label class="form-label mt-1" for="user">Логин</label>
+    <input class="form-control m-1" type="text" id="user" name="user"/>
+    <label class="form-label mt-1" for="pass">Пароль</label>
+    <input class="form-control m-1" type="password" id="pass" name="pass"/>
+    <div class="row justify-content-center p-3">
+      <button type="submit" class="btn btn-success m-2 col-lg-7 col-12">Войти</button>
+      <a href="registration" type="submit" class="btn btn-primary m-2 col-lg-4 col-12">Регистрация</a>
+    </div>
+  </fieldset>
+</form>
+
+{{>all-fother}}

@@ -3,16 +3,7 @@
   <div class="row">
     <div class="col-lg-9 col-12">
       <div class="note-container mt-2 mb-1">
-        <div class="container pt-2 pb-2">Обсуждение</div>
-        <div class="line"></div>
-        <div class="container d-flex">
-          <div class=""><a class="btn btn-light p-2">Всё подряд</a></div>
-          <div class=""><a class="btn btn-light p-2">Лучшее</a></div>
-          <div class="ms-auto"><a class="btn btn-light p-2"><span class="material-icons "
-                                                                  style="font-size: 14px">search</span></a></div>
-        </div>
-        {{#notes}}
-          <div class="line"></div>
+        {{#note}}
           <div class="container pt-3 pb-2">
             <div class="d-flex">
               <div class="icon-author"><img src="/img/avatar-1.jpg" alt="avatar"></div>
@@ -29,12 +20,11 @@
                 {{#tags}}<a href="/notes?tags={{name}}" class="btn btn-sm btn-primary ms-1 me-1"> {{name}} </a>{{/tags}}
               </div>
               <div class="mt-2">
-                {{text}}
+                {{full-text}}
               </div>
-              <a href="/note/{{id}}" class="btn btn-light col-3 mt-1">Читать дальше...</a>
             </div>
           </div>
-        {{/notes}}
+        {{/note}}
       </div>
     </div>
     <div class="col-lg-3 col-12">
